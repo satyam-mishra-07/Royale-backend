@@ -12,6 +12,7 @@
     "bcryptjs": "^2.4.3",
     "generate-unique-id": "^2.0.3",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.4.5"
+    "mongoose": "^8.4.5",
+    "dotenv": "^16.0.0",
   }
 }
