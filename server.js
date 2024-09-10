@@ -9,6 +9,7 @@ const order = require('./routers/orderRoute');
 const admin = require('./routers/adminRoute');
 const contact = require('./routers/contactRoute');
 const cors = require('cors');
+const errorMiddleware = require('./middleware/error-middleware');
 
 const allowedOrigins = [
   "https://royale-nine.vercel.app", 
@@ -39,8 +40,10 @@ app.use("/api/form", contact);
 app.use("/api/cart", cart);
 app.use("/api/order", order);
 app.use("/api/admin", admin);
+app.use(errorMiddleware);
 
 const PORT = 3000;
+
 
 const uri = process.env.MONGODB_URI;
 
