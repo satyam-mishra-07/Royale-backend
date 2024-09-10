@@ -4,7 +4,7 @@ const contactControllers = require("../controllers/contact-controller");
 const {contactSchema, reservationSchema} = require("../validators/contact-validator");
 const validate = require("../middleware/validate-middleware");
 
-router.route("/contact").post(validate(contactSchema), contactControllers);
+router.route("/contact").post(validate(contactSchema), contactControllers.contact);
 router.route("/reservation").post(validate(reservationSchema), contactControllers.createReservation);
 
 module.exports = router;
