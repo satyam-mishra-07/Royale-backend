@@ -11,7 +11,7 @@ const contact = require('./routers/contactRoute');
 const cors = require('cors');
 
 const corsOption = {
-  origin: "http://localhost:5173",
+  origin: "https://royale-nine.vercel.app/",
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true
 }
