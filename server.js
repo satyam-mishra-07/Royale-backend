@@ -5,14 +5,14 @@ const connectDB = require('./utils/db');
 const auth = require('./routers/authRoute');
 const menu = require('./routers/menuRoute');
 const cart = require('./routers/cartRoute');
-const order = require('./routers/orderRoute')
+const order = require('./routers/orderRoute');
 const admin = require('./routers/adminRoute');
 const contact = require('./routers/contactRoute');
 const cors = require('cors');
 
 const allowedOrigins = [
   "https://royale-nine.vercel.app", 
-  "https://royale-frontend.onrender.com/", 
+  "https://royale-frontend.onrender.com",
   "http://localhost:3000"
 ];
 
@@ -29,10 +29,9 @@ const corsOptions = {
   allowedHeaders: "Content-Type, Authorization",
 };
 
+// Use the correct CORS options
 app.use(cors(corsOptions));
 
-
-app.use(cors(corsOption));
 app.use(express.json());
 app.use('/api/auth', auth);
 app.use("/api/data", menu);
