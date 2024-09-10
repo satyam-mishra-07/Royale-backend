@@ -10,11 +10,27 @@ const admin = require('./routers/adminRoute');
 const contact = require('./routers/contactRoute');
 const cors = require('cors');
 
-const corsOption = {
-  origin: "https://royale-nine.vercel.app",
+const allowedOrigins = [
+  "https://royale-nine.vercel.app", 
+  "https://royale-frontend.onrender.com/", 
+  "http://localhost:3000"
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true); // Allow the request if the origin is in the allowed list
+    } else {
+      callback(new Error("Not allowed by CORS")); // Reject the request otherwise
+    }
+  },
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
-  credentials: true
-}
+  credentials: true,
+  allowedHeaders: "Content-Type, Authorization",
+};
+
+app.use(cors(corsOptions));
+
 
 app.use(cors(corsOption));
 app.use(express.json());
