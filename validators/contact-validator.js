@@ -17,8 +17,6 @@ const contactSchema = z.object({
 
 // schemas/reservationSchema.js
 
-const { z } = require('zod');
-
 const reservationSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
   email: z.string().email({ message: "Invalid email address" }),
