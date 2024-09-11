@@ -12,9 +12,8 @@ const cors = require('cors');
 const errorMiddleware = require('./middleware/error-middleware');
 
 const allowedOrigins = [
-  "https://royale-nine.vercel.app", 
-  "https://royale-frontend.onrender.com",
-  "http://localhost:3000"
+  "https://royale-nine.vercel.app",
+  "http://localhost:5173"
 ];
 
 const corsOptions = {
